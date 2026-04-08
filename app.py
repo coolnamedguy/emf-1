@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 st.title('Interactive Model: Uniformly Charged Sphere (Gauss Law)')
 st.write("غير قيم نصف قطر الكرة (a) ونقطة القياس (r) وشوف سطح كاوس والمخطط البياني يتغيرون.")
 
-# أشرطة التمرير
-a = st.slider('Sphere Radius (a) - حجم الكرة', min_value=0.1, max_value=5.0, value=2.0, step=0.1)
-r_point = st.slider('Observation Point (r) - نصف قطر كاوس', min_value=0.1, max_value=10.0, value=1.0, step=0.1)
+# أشرطة التمرير بالانجليزي
+a = st.slider('Sphere Radius (a)', min_value=0.1, max_value=5.0, value=2.0, step=0.1)
+r_point = st.slider('Gaussian Surface (r)', min_value=0.1, max_value=10.0, value=1.0, step=0.1)
 rho_0 = 1.0  
 
 # دالة حساب كثافة الفيض
@@ -22,11 +22,11 @@ st.subheader("Visual Representation")
 fig_circles, ax_circles = plt.subplots(figsize=(6, 6))
 
 # رسم الكرة المشحونة (دائرة ملونة)
-circle_a = plt.Circle((0, 0), a, color='skyblue', alpha=0.7, label='Charged Sphere (a)')
+circle_a = plt.Circle((0, 0), a, color='skyblue', alpha=0.7, label='Charged Sphere')
 ax_circles.add_patch(circle_a)
 
 # رسم سطح كاوس (دائرة مقطعة)
-circle_r = plt.Circle((0, 0), r_point, color='black', fill=False, linestyle='--', linewidth=2, label='Gaussian Surface (r)')
+circle_r = plt.Circle((0, 0), r_point, color='black', fill=False, linestyle='--', linewidth=2, label='Gaussian Surface')
 ax_circles.add_patch(circle_r)
 
 # إعدادات محاور الرسم حتى تبقى ثابتة والدوائر تصغر وتكبر بداخلها
